@@ -13,7 +13,7 @@ int main() {
 
     std::cout << v << std::endl;
     std::cout << sa << std::endl;
-    
+
 
 
 
