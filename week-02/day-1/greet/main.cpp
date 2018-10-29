@@ -7,7 +7,7 @@ int main() {
 
     std::string a1 = "Greenfox";
     greet(a1);
-    
+
 
     return 0;
 }
