@@ -1,12 +1,22 @@
 #include <iostream>
-#include <string>
+using namespace std;
 
-int main(int argc, char* args[]) {
 
-    // - Write a function called `sum` that sum all the numbers
-    //   until the given parameter and returns with an integer
+int sum(int n);
+int main()
+{
+    int n, sum = 0;
+    sum;
 
-    
+    for (int i = 1; i <= n; ++i) {
+        sum += i;
+    }
 
+    std::cout << "Sum = " << sum;
     return 0;
+}
+
+int sum(int n) {
+    int n = 6;
+
 }
