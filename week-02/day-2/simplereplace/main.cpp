@@ -4,7 +4,7 @@
 
 int main() {
 
-    std::string example = "In a dishwasher, far far away!";
+    std::string example = "In a dishwasher far far away!";
     std::string from = "dishwasher";
 
     int start_pos = example.find(from);

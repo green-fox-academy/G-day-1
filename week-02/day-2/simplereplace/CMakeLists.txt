@@ -3,4 +3,5 @@ project(simplereplace)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(simplereplace main.cpp)
+add_executable(simplereplace
+        main.cpp)
