@@ -1,7 +1,6 @@
 cmake_minimum_required(VERSION 3.12)
-project(average)
+project(partyindicator)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(average
-        main.cpp)
+add_executable(partyindicator main.cpp)
