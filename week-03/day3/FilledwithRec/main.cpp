@@ -25,17 +25,22 @@ SDL_Renderer* gRenderer = nullptr;
 
 void draw() {
 
-    SDL_SetRenderDrawColor(gRenderer, 0xFF, 0x00, 0x00, 0xFF);
-//create a rectangle
-    SDL_Rect fillRect = { 100, 100, 20, 50};
-//draw rectangle
-    SDL_RenderFillRect( gRenderer, &fillRect );
+    int x;
+    int y;
+    int z;
+    int w;
+
 
     for(int i = 0; i < 5; i++) {
-        SDL_SetRenderDrawColor(gRenderer, 0xFF, 0x00, 0x00, 0xFF);
-        SDL_RenderDrawLine(gRenderer, x, y, x + 50, y);
-        x += 50;
-        y += 200;
+        SDL_SetRenderDrawColor(gRenderer, 0xFF - 200 * i, 0x00 + 50 * i, 0x00 + 10 * i, 0xFF);
+
+            SDL_Rect fillRect = { x, y, z, w};
+        SDL_RenderFillRect( gRenderer, &fillRect );
+
+        x += 80;
+        y += 100;
+        z = 50;
+        w = 70;
     }
 }
 bool init()
