@@ -1,7 +1,3 @@
-// Exercise:
-// draw four different size and color rectangles.
-// avoid code duplication.
-
 #include <iostream>
 #include <SDL.h>
 
@@ -9,10 +5,11 @@
 const int SCREEN_WIDTH = 640;
 const int SCREEN_HEIGHT = 480;
 
+//Draws geometry on the canvas
+void draw();
+
 //Starts up SDL and creates window
 bool init();
-
-void draw();
 
 //Frees media and shuts down SDL
 void close();
@@ -23,25 +20,33 @@ SDL_Window* gWindow = nullptr;
 //The window renderer
 SDL_Renderer* gRenderer = nullptr;
 
-void draw() {
+void draw()
+{
 
     int x;
     int y;
-    int z;
-    int w;
+    int r = 50;
+    int h = 50;
 
 
     for(int i = 0; i < 5; i++) {
-        SDL_SetRenderDrawColor(gRenderer, 0xFF - 200 * i, 0x00 + 50 * i, 0x00 + 10 * i, 0xFF);
-            SDL_Rect fillRect = { x, y, z, w};
-        SDL_RenderFillRect( gRenderer, &fillRect );
+        SDL_SetRenderDrawColor(gRenderer, 0xFF, 0x00, 0x00, 0xFF);
 
-        x += 60;
-        y += 50;
-        z += 40;
-        w = 20;
+
+        SDL_Rect r;
+        SDL_RenderDrawRect( gRenderer, &r );
+
+
     }
+    // create a square drawing function that takes 1 parameter:
+    // the square size
+    // and draws a square of that size to the center of the canvas.
+    // draw at least 3 squares with that function.
+    // the squares should not be filled otherwise they will hide each other
+    // avoid code duplication.
+
 }
+
 bool init()
 {
     //Initialize SDL
@@ -52,7 +57,7 @@ bool init()
     }
 
     //Create window
-    gWindow = SDL_CreateWindow( "Four rectangles", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN );
+    gWindow = SDL_CreateWindow( "Center box function", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN );
     if( gWindow == nullptr )
     {
         std::cout << "Window could not be created! SDL Error: " << SDL_GetError() << std::endl;
@@ -86,7 +91,6 @@ void close()
 
 int main( int argc, char* args[] )
 {
-
     //Start up SDL and create window
     if( !init() )
     {
@@ -97,8 +101,6 @@ int main( int argc, char* args[] )
 
     //Main loop flag
     bool quit = false;
-
-
 
     //Event handler
     SDL_Event e;
@@ -116,10 +118,6 @@ int main( int argc, char* args[] )
         //Clear screen
         SDL_SetRenderDrawColor(gRenderer, 0xFF, 0xFF, 0xFF, 0xFF);
         SDL_RenderClear(gRenderer);
-
-        //--------------------------------------------
-        //This is where you can start drawing geometry
-        //--------------------------------------------
 
         draw();
 
