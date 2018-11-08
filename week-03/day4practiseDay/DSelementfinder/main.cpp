@@ -1,41 +1,46 @@
 #include <iostream>
-#include <string>
+#include <algorithm>
 #include <vector>
 
-/////////// <<<<<----- SOLAR SYSTEM
+std::string containsSeven(const std::vector<int>& numbers)
+{
+    for(int i = 0; i < numbers.size(); i++) {
+        if (numbers[i] == 7) {
+            return "Hoorrraaayyy!";
+        }
+        else {
+            return "Nooo.....";
+        }
+    }
 
-std::vector<std::string> putSaturn(const std::vector<std::string>& planets)
+
+}
+
+std::string containsSeven_stdfind(const std::vector<int>& numbers)
 {
 
+    if ( std::find(numbers.begin(), numbers.end(), 7) != numbers.end() ){
+        return "Hurrraaaaaaaay!";
+    }
+    else{
+        return "Noooooooooooooooooooooooo";
+    }
 
-    std::vector<std::string> planets2 = planets;
-    planets2.insert(planets2.begin()+5, "Saturn");  //  <<--- 6. helyre teszi
-
-
-
-    return planets2;
 }
 
 int main(int argc, char* args[])
 {
-    std::vector<std::string> planets = {"Mercury","Venus","Earth","Mars","Jupiter","Uranus","Neptune"};
+    const std::vector<int> numbers = {1, 2, 3, 4, 5};
 
-    // planets.push_back("Saturn");  <<--- végére tolja
+    // Write a method that checks if the arrayList contains "7" if it contains return "Hoorray" otherwise return "Noooooo"
+    // The output should be: "Noooooo"
+    // Do this with 2 different solutions. First should iterate through the vector and check every element one by one and the second should use std::find
 
+    // Expected output: "Noooooo"
+    std::cout << containsSeven(numbers) << std::endl;
+    // Expected output: "Noooooo"
+    std::cout << containsSeven_stdfind(numbers) << std::endl;
 
-
-
-    for(const auto& planet : putSaturn(planets)) {
-        std::cout << planet << " ";
-
-
-
-        // Saturn is missing from the planetList
-        // Insert it into the correct position
-        // Create a method called putSaturn() which has list parameter and returns the correct list.
-
-        // Expected output: Mercury Venus Earth Mars Jupiter Saturn Uranus Neptune
-
-    }
-        return 0;
+    return 0;
 }
+
