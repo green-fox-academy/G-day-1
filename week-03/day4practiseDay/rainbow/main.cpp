@@ -1,6 +1,6 @@
 #include <iostream>
 #include <SDL.h>
-
+///////////////// <<<<<<-------------------- NINCS KÉSZ
 //Screen dimension constants
 const int SCREEN_WIDTH = 640;
 const int SCREEN_HEIGHT = 480;
@@ -20,24 +20,34 @@ SDL_Window* gWindow = nullptr;
 //The window renderer
 SDL_Renderer* gRenderer = nullptr;
 
-void draw()
-{
+void draw() {
 
-    for(int a = 25; a < 80; a += 25) {
-        SDL_SetRenderDrawColor( gRenderer, 255, 0, 0, 255 );
+    int i;
+    int a;
 
 
-        SDL_Rect r;
-        r.x = SCREEN_WIDTH / 2 - a / 2;
-        r.y = SCREEN_HEIGHT / 2 - a / 2;
-        r.w = a;
-        r.h = a;
+    for (int i = 0; i < 80; i += 12) {
 
-        SDL_RenderDrawRect( gRenderer, &r );
+        int x = 100;
+
+
+
+        //choose color
+        SDL_SetRenderDrawColor(gRenderer, i, i, i, i);
+//create a rectangle
+        SDL_Rect fillRect = {SCREEN_WIDTH / 2 + a / 2, SCREEN_HEIGHT / 2 - a / 2, SCREEN_WIDTH / 4, SCREEN_HEIGHT / 4};
+//draw rectangle
+        SDL_RenderFillRect(gRenderer, &fillRect);
+
+        a += 100;
 
     }
-
 }
+    // Create a square drawing function that takes 2 parameters:
+    // The square size, and the fill color,
+    // and draws a square of that size and color to the center of the canvas.
+    // Create a loop that fills the canvas with rainbow colored squares.
+
 
 bool init()
 {
@@ -49,7 +59,7 @@ bool init()
     }
 
     //Create window
-    gWindow = SDL_CreateWindow( "Center box function", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN );
+    gWindow = SDL_CreateWindow( "Rainbow box function", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN );
     if( gWindow == nullptr )
     {
         std::cout << "Window could not be created! SDL Error: " << SDL_GetError() << std::endl;
@@ -81,11 +91,9 @@ void close()
     SDL_Quit();
 }
 
-int main( int argc, char* args[] )
-{
+int main( int argc, char* args[] ) {
     //Start up SDL and create window
-    if( !init() )
-    {
+    if (!init()) {
         std::cout << "Failed to initialize!" << std::endl;
         close();
         return -1;
@@ -98,7 +106,7 @@ int main( int argc, char* args[] )
     SDL_Event e;
 
     //While application is running
-    while( !quit ) {
+    while (!quit) {
         //Handle events on queue
         while (SDL_PollEvent(&e) != 0) {
             //User requests quit
