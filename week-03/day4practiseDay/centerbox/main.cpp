@@ -23,28 +23,20 @@ SDL_Renderer* gRenderer = nullptr;
 void draw()
 {
 
-    int x;
-    int y;
-    int r = 50;
-    int h = 50;
-
-
-    for(int i = 0; i < 5; i++) {
-        SDL_SetRenderDrawColor(gRenderer, 0xFF, 0x00, 0x00, 0xFF);
+    for(int a = 25; a < 80; a += 25) {
+        SDL_SetRenderDrawColor( gRenderer, 255, 0, 0, 255 );
 
 
         SDL_Rect r;
+        r.x = SCREEN_WIDTH / 2 - a / 2;
+        r.y = SCREEN_HEIGHT / 2 - a / 2;
+        r.w = a;
+        r.h = a;
+
         SDL_RenderDrawRect( gRenderer, &r );
 
-
     }
-    // create a square drawing function that takes 1 parameter:
-    // the square size
-    // and draws a square of that size to the center of the canvas.
-    // draw at least 3 squares with that function.
-    // the squares should not be filled otherwise they will hide each other
-    // avoid code duplication.
-
+    
 }
 
 bool init()
