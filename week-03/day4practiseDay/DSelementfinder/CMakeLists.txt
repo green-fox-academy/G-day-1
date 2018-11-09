@@ -3,4 +3,5 @@ project(DSelementfinder)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(DSelementfinder main.cpp)
+add_executable(DSelementfinder
+        main.cpp)
