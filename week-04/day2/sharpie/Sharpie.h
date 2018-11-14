@@ -3,17 +3,16 @@
 #include <iostream>
 
 class Sharpie {
-
 public:
-    Sharpie();
-
-    Sharpie(const std::string &color, float width, float inkAmount);
-
-    std::string getcolor();
-    float getwidht();
-    float getinkAmount();
+    Sharpie(const std::string &color, float width);
 
     void use();
+
+    const std::string &getColor() const;
+
+    float getWidth() const;
+
+    float getInkAmount() const;
 
 
 private:
