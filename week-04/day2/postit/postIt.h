@@ -5,9 +5,7 @@
 class postIt{
 public:
 
-
     postIt(std::string BackgroundColor, std::string text, std::string TextColor);
-
 
     std::string getBackgroundColor();
     std::string gettext();

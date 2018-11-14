@@ -3,4 +3,9 @@ project(animals)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(animals main.cpp Animal.cpp Animal.h)
+include_directories(.)
+
+add_executable(animals
+        Animal.cpp
+        Animal.h
+        main.cpp)
