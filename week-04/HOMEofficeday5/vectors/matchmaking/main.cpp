@@ -6,8 +6,13 @@ std::vector<std::string> makingMatches(const std::vector<std::string>& girls, co
 {
     std::vector<std::string> newgirls = girls;
     std::vector<std::string> newboys = boys;
-    
+    std::vector<std::string> forevertogether;
 
+    for (int i = 0; i < newgirls.size(); ++i) {
+        forevertogether.push_back(newgirls[i]);
+        forevertogether.push_back(newboys[i]);
+    }
+    return forevertogether;
 }
 
 int main(int argc, char* args[])
@@ -15,13 +20,8 @@ int main(int argc, char* args[])
     std::vector<std::string> girls = {"Eve","Ashley","Claire","Kat","Jane"};
     std::vector<std::string> boys = {"Joe","Fred","Tom","Todd","Neef","Jeff"};
 
-    // Write a method that joins the two lists by matching one girl with one boy into a new list
-    // If someone has no pair, he/she should be the element of the list too
-    // Exepected output: "Eve", "Joe", "Ashley", "Fred"...
-
-    for(const auto& planet : makingMatches(girls, boys))
-    {
-        std::cout << planet << " ";
+    for(const auto& forevertogether : makingMatches(girls, boys)){
+        std::cout << forevertogether << " ";
     }
 
     return 0;
