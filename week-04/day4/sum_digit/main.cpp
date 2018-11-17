@@ -1,26 +1,25 @@
 #include <iostream>
 
-// Given a non-negative int n, return the sum of its digits recursively (no loops).
-// Note that mod (%) by 10 yields the rightmost digit (126 % 10 is 6), while
-// divide (/) by 10 removes the rightmost digit (126 / 10 is 12).
-int counter(int);
+int main(int argc, char const *argv[]){
+    int b = 100;
+    b -= 7;
 
-int main() {
-
-
-    int x = 276;
+    std::cout << b << std::endl;
 
 
-    std::cout << counter(x) << std::endl;
+    int f1 = 423;
+    int f2 = 345;
+    // tell if f1 is bigger than f2 (print as a boolean)
 
+    bool trueornot;
 
-    return 0;
-}
+    if(f1 < f2) {
+        trueornot = false;
+        std::cout << std::boolalpha << false << std::endl;
 
-int counter(int num) {
-    if (num <= 0) { //base case
-        return num;
     } else {
-        return (num % 10) + counter(num / 10);
-    }
+        std::cout << std::boolalpha << true << std::endl;
+            }
+
+
 }
