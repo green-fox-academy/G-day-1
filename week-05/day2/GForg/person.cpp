@@ -4,7 +4,7 @@
 Person::Person(const std::string &name, int age, Gender gender) : _name(name), _age(age), _gender(gender) {
 }
 
-std::string Person::stringtoGender() {
+std::string Person::gendertoString() {
     if( _gender == Gender::MALE) {
         return "male";
     }
@@ -14,7 +14,7 @@ std::string Person::stringtoGender() {
 }
 
 void Person::introduce() {
-    std::cout << "Hi, I'm " << _name << ", a " << _age << " year old " << stringtoGender() << "." << std::endl;
+    std::cout << "Hi, I'm " << _name << ", a " << _age << " year old " << gendertoString() << "." << std::endl;
 
 }
 

@@ -16,7 +16,7 @@ public:
 
     virtual void introduce();
     virtual std::string getGoal();
-    std::string stringtoGender();
+    std::string gendertoString();
 
 protected:
 
