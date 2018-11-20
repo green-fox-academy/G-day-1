@@ -15,8 +15,8 @@ public:
     void skipDays(int numberofDays);
 
 protected:
-    std::string previousOrganization;
-    int skippedDays;
+    std::string _previousOrganization;
+    int _skippedDays;
 
 
 
