@@ -1,14 +1,20 @@
-//
-// Created by Gé on 2018. 11. 19..
-//
+#ifndef FLEET_OF_THINGS_THING_H
+#define FLEET_OF_THINGS_THING_H
 
-#ifndef FLEET_THING_H
-#define FLEET_THING_H
+#include <string>
 
+class Thing
+{
+public:
+    Thing(const std::string& name);
 
-class thing {
+    void complete();
+    std::string toString();
 
+private:
+    std::string _name;
+    bool _completed;
 };
 
 
-#endif //FLEET_THING_H
+#endif //FLEET_OF_THINGS_THING_H
