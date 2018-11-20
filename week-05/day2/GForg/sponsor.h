@@ -11,11 +11,11 @@ public:
 
     void introduce() override;
     std::string getGoal() override;
-
+    void hire();
 protected:
     std::string _company;
     int _hiredStudents;
-    int _hire();
+
 
 
 

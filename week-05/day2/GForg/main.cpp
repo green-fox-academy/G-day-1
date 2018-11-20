@@ -4,27 +4,50 @@
 #include "mentor.h"
 #include <vector>
 #include "sponsor.h"
+#include "cohort.h"
+
 int main()
 {
-
+    std::vector<Person*> people;
 
     Person mark("Mark", 46, Gender::MALE);
-    mark.introduce();
+    people.push_back(&mark);
+    Person jane;
+    people.push_back(&jane);
+    Student john("John Doe", 20, Gender::MALE, "BME", 0);
+    people.push_back(&john);
+    Student student;
+    people.push_back(&student);
+    Mentor gandhi("Gandhi", 148, Gender::MALE, Level::SENIOR);
+    people.push_back(&gandhi);
+    Mentor mentor;
+    people.push_back(&mentor);
+    Sponsor sponsor;
+    people.push_back(&sponsor);
+    Sponsor elon("Elon Musk", 46, Gender::MALE, "SpaceX", 0);
+    people.push_back(&elon);
 
-    Student csicska("banat", 33, Gender::FEMALE, "BME", 3);
-    csicska.introduce();
+    student.skipDays(3);
 
-    Mentor baromfi("névtelen mentor", 22, Gender::FEMALE, Level::INTERMEDIATE);
-    baromfi.introduce();
+    for (int i = 0; i < 5; i++) {
+        elon.hire();
+    }
 
-    Sponsor dik("richie rich", 55, Gender::MALE, "SAP", 33);
-    dik.introduce();
+    for (int i = 0; i < 3; i++) {
+        sponsor.hire();
+    }
 
+    for(Person* person : people) {
+        person->introduce();
+        person->getGoal();
+    }
 
-
-
-
-
+    Cohort awesome = Cohort("AWESOME");
+    awesome.addStudent(&student);
+    awesome.addStudent(&john);
+    awesome.addMentor(&mentor);
+    awesome.addMentor(&gandhi);
+    awesome.info();
 
     return 0;
 }

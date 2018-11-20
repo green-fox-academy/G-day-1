@@ -1,8 +1,10 @@
 #include <string>
 #include "sponsor.h"
+#include "person.h"
 
 Sponsor::Sponsor(const std::string &name, int age, Gender gender, const std::string &company, int hiredStudents)
         : Person(name, age, gender), _company(company), _hiredStudents(hiredStudents) {
+
     }
 
 Sponsor::Sponsor() : Person("Jane Doe", 30, Gender::FEMALE) {
@@ -19,6 +21,6 @@ std::string Sponsor::getGoal() {
     std::cout << "My goal is: Hire brilliant junior software developers." << std::endl;
 }
 
-int Sponsor::_hire() {
+void Sponsor::hire() {
     _hiredStudents++;
 }

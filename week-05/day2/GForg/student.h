@@ -10,6 +10,8 @@ public:
     Student();
     Student(const std::string &name, int age, Gender gender, const std::string &previousOrganization, int skippedDays);
 
+
+
     void introduce()  override;
     std::string getGoal()  override;
     void skipDays(int numberofDays);

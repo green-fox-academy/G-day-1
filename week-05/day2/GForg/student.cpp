@@ -3,13 +3,16 @@
 #include <string>
 
 Student::Student(const std::string &name, int age, Gender gender, const std::string &previousOrganization,
-                 int skippedDays):Person(name, age, gender) {
+                 int skippedDays):Person(name, age, gender), _previousOrganization(previousOrganization), _skippedDays(skippedDays) {
 
     _previousOrganization = previousOrganization;
-    _skippedDays = skippedDays;
+    _skippedDays = 0;
 }
 
-Student::Student() : Person("Jane Doe", 30, Gender::FEMALE) {
+Student::Student() : Person() {
+    _name = "Jane Doe";
+    _age = 30;
+    Gender::FEMALE;
     _previousOrganization = "The School of Life";
     _skippedDays = 0;
 }

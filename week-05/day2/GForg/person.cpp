@@ -4,6 +4,13 @@
 Person::Person(const std::string &name, int age, Gender gender) : _name(name), _age(age), _gender(gender) {
 }
 
+Person::Person() {
+    _name = "Jane Doe";
+    _age = 30;
+    _gender = Gender::FEMALE;
+}
+
+
 std::string Person::gendertoString() {
     if( _gender == Gender::MALE) {
         return "male";

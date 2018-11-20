@@ -12,6 +12,8 @@ class Person {
 
 public:
 
+    Person();
+
     Person(const std::string &name, int age, Gender gender);
 
     virtual void introduce();
