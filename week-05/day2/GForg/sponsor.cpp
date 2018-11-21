@@ -2,9 +2,9 @@
 #include "sponsor.h"
 #include "person.h"
 
-Sponsor::Sponsor(const std::string &name, int age, Gender gender, const std::string &company, int hiredStudents)
-        : Person(name, age, gender), _company(company), _hiredStudents(hiredStudents) {
-
+Sponsor::Sponsor(const std::string &name, int age, Gender gender, const std::string &company)
+        : Person(name, age, gender), _company(company) {
+    _hiredStudents = 0;
     }
 
 Sponsor::Sponsor() : Person("Jane Doe", 30, Gender::FEMALE) {

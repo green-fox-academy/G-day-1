@@ -14,7 +14,7 @@ int main()
     people.push_back(&mark);
     Person jane;
     people.push_back(&jane);
-    Student john("John Doe", 20, Gender::MALE, "BME", 0);
+    Student john("John Doe", 20, Gender::MALE, "BME");
     people.push_back(&john);
     Student student;
     people.push_back(&student);
@@ -24,7 +24,7 @@ int main()
     people.push_back(&mentor);
     Sponsor sponsor;
     people.push_back(&sponsor);
-    Sponsor elon("Elon Musk", 46, Gender::MALE, "SpaceX", 0);
+    Sponsor elon("Elon Musk", 46, Gender::MALE, "SpaceX");
     people.push_back(&elon);
 
     student.skipDays(3);

@@ -2,8 +2,7 @@
 #include "person.h"
 #include <string>
 
-Student::Student(const std::string &name, int age, Gender gender, const std::string &previousOrganization,
-                 int skippedDays):Person(name, age, gender), _previousOrganization(previousOrganization), _skippedDays(skippedDays) {
+Student::Student(const std::string &name, int age, Gender gender, const std::string &previousOrganization):Person(name, age, gender), _previousOrganization(previousOrganization) {
 
     _previousOrganization = previousOrganization;
     _skippedDays = 0;

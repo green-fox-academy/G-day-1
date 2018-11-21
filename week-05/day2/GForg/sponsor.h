@@ -6,7 +6,7 @@ class Sponsor : public Person {
 public:
     Sponsor();
 
-    Sponsor(const std::string &name, int age, Gender gender, const std::string &company, int hiredStudents);
+    Sponsor(const std::string &name, int age, Gender gender, const std::string &company);
 
 
     void introduce() override;

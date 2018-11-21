@@ -8,7 +8,7 @@ class Student : public Person {
 
 public:
     Student();
-    Student(const std::string &name, int age, Gender gender, const std::string &previousOrganization, int skippedDays);
+    Student(const std::string &name, int age, Gender gender, const std::string &previousOrganization);
 
 
 
