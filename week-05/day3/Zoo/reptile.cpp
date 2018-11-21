@@ -1,0 +1,9 @@
+#include "reptile.h"
+
+Reptile::Reptile(const std::string &name) : Animal(name) {
+
+}
+
+std::string Reptile::breed() {
+    return "laying eggs.";
+}
