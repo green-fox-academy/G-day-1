@@ -1,0 +1,1 @@
+#include "stringedinstrument.h"

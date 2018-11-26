@@ -5,16 +5,12 @@
 
 class Student : public Person {
 
-
 public:
-    Student();
-    Student(const std::string &name, int age, Gender gender, const std::string &previousOrganization);
-
-
-
     void introduce()  override;
     std::string getGoal()  override;
     void skipDays(int numberofDays);
+    Student();
+    Student(const std::string &name, int age, Gender gender, const std::string &previousOrganization);
 
 protected:
     std::string _previousOrganization;

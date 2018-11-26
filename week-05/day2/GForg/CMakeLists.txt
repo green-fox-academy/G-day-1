@@ -3,4 +3,17 @@ project(GForg)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(GForg main.cpp person.cpp person.h student.cpp student.h mentor.cpp mentor.h sponsor.cpp sponsor.h cohort.cpp cohort.h)
+include_directories(.)
+
+add_executable(GForg
+        cohort.cpp
+        cohort.h
+        main.cpp
+        mentor.cpp
+        mentor.h
+        person.cpp
+        person.h
+        sponsor.cpp
+        sponsor.h
+        student.cpp
+        student.h)
