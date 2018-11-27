@@ -13,10 +13,10 @@ int main() {
 
     int lives = 5;
 
-    for (int i = 0; i < 5; ++i) {
+    while(lives > 0) {
         std::cin >> usersNumber1;
         if(generatedNumber > usersNumber1) {
-            std::cout << "Too low, you have" << lives - 1 <<  "lives left." << std::endl;
+            std::cout << "Too low, you have" << lives - 1 <<  " lives left." << std::endl;
         }else if(generatedNumber == usersNumber1) {
             std::cout << "CONGRATS! YOU WON!" << std::endl;
             return 0;
