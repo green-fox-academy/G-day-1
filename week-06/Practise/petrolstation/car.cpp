@@ -1,18 +1,19 @@
 #include "car.h"
 
-Car::Car(int gasAmount, int capacity) : _gasAmount(gasAmount), _capacity(capacity) {
-
-}
+Car::Car(int gasAmountCar, int capacity) : _gasAmountCar(gasAmountCar), _capacity(capacity) {}
 
 bool Car::isFull() {
-    if (_capacity == _gasAmount) {
-        return true;
-    }
-    else{
-        return false;
-    }
+    return _capacity == _gasAmountCar;
 }
 
 void Car::fill() {
-    _gasAmount++;
+    _gasAmountCar++;
+}
+
+int Car::getGasAmountCar() const {
+    return _gasAmountCar;
+}
+
+int Car::getCapacity() const {
+    return _capacity;
 }

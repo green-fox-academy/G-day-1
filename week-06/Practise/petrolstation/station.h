@@ -4,16 +4,16 @@
 #include "car.h"
 
 class Station {
+
+
 public:
     Station(int gasAmount);
     void fill(Car& car);
 
-
+    int getGasAmount() const;
 
 private:
     int _gasAmount;
-
-
 };
 
 

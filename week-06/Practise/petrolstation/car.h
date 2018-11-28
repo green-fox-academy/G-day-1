@@ -4,14 +4,19 @@
 
 class Car {
 public:
+    Car(int gasAmountCar, int capacity);
     bool isFull();
     void fill();
-    Car(int gasAmount, int capacity);
+
 
 private:
+    int _gasAmountCar;
     int _capacity;
-    int _gasAmount;
+public:
+    int getGasAmountCar() const;
+
+    int getCapacity() const;
+
 };
 
-
-#endif //PETROLSTATION_CAR_H
+#endif
