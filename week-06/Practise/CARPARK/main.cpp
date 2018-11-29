@@ -7,7 +7,34 @@
 Carpark readFromFile(std::string fileName);
 void writeToFile(std::string fileName, Carpark carpark);
 
-int main() {
+int main()
+{
+    try{
+        Carpark carpark = readFromFile("../cars.txt");
+
+        std::cout << "Oldest: " << carpark.getOldest() << std::endl;
+        std::map<int, int> penaltiesByYear = carpark.getPenaltiesByYear();
+        for (std::pair<int, int> pair : penaltiesByYear) {
+            std::cout << "Year: " << pair.first << " Number of cars without ticket: " << pair.second << std::endl;
+        }
+
+        carpark.removeCar(5);
+        carpark.removeCar(3);
+
+        carpark.modifyTicket(1, false);
+
+        writeToFile("../newcars.csv", carpark);
+
+    }catch(int e){
+        if(e == 2){
+            std::cout << "cars.csv could not be opened" << std::endl;
+            return 2;
+        }else if( e == 3){
+            std::cout << "newcars.csv could not be opened" << std::endl;
+            return 3;
+        }
+    }
+
 
 
     return 0;
