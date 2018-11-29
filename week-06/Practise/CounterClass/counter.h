@@ -5,7 +5,7 @@
 class Counter {
 public:
     Counter();
-    
+
     Counter(int value);
     int add();
     int add(int number);
