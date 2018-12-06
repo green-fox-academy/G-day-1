@@ -11,11 +11,8 @@ enum class Weather {
 class WeatherInCities {
 public:
     WeatherInCities(const std::string &date, const std::string &city, Weather type);
-
     const std::string &getDate() const;
-
     const std::string &getCity() const;
-
     Weather getType() const;
 
 protected:
