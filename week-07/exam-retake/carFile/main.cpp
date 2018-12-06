@@ -44,19 +44,16 @@ int main() {
     greenCars(cars);
     weightOfTheFastestCar(cars);
 
-    try {
-        if (carsOver1000(cars)) {
-            throw std::string("Yeeey");
-        }
-        }catch(std::string e){
-            std::cout << e << std::endl;
-            return -1;
-        }
-
+    if(carsOver1000(cars)) {
+        std::cout << "Yess" << std::endl;
+    }else{
+        std::cout << "No" << std::endl;
+    }
         return 0;
 }
 
-int greenCars(std::vector<Car> a) {
+int greenCars(std::vector<Car> a)
+{
     int numberOfGreenCars = 0;
     for (int i = 0; i < a.size(); ++i) {
         if(a[i].getColor() == "Green") {
@@ -77,13 +74,10 @@ int weightOfTheFastestCar(std::vector<Car> b) {
 }
 
 bool carsOver1000(std::vector<Car> c) {
+    int x = 0;
     for (int i = 0; i < c.size(); i++) {
         if(c[i].getWeight() > 1000) {
-            std::cout << "Yes" << std::endl;
-            return true;
-        }else{
-            std::cout << "No" << std::endl;
-            return false;
-        }
-    }
+            return true;}
+        }return false;
 }
+
