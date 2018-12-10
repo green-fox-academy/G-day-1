@@ -1,0 +1,1 @@
+add_library(poker simple.h simple.cpp)
