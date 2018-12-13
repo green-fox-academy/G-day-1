@@ -2,7 +2,7 @@
 #include <string.h>
 
 typedef struct house {
-    char *address;
+    char address[256];
     int price;
     int room;
     int area;
@@ -10,22 +10,16 @@ typedef struct house {
 }house_t;
 
 char worth_to_buy(house_t *x);
-int house_array(const int array[], int length);
-/*
-Create a function that takes an array of houses (and it's length), and counts the
-houses that are worth to buy.
-*/
+int house_array(house_t array[], int length);
 
 int main()
 {
     house_t House1;
-    House1.address = "street_1";
     House1.area = 100;
     House1.price = 4;
     House1.market_price = 400 * House1.area;
 
     house_t House2;
-    House2.address = "street_2";
     House2.area = 2;
     House2.price = 100000000;
     House2.market_price = 400 * House2.area;
@@ -50,7 +44,7 @@ char worth_to_buy(house_t *x)
     }
 }
 
-int house_array(const int array[], int length)
+int house_array(house_t array[], int length)
 {
     int count_worth = 0;
 
