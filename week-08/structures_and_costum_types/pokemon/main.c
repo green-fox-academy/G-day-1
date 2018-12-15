@@ -3,6 +3,8 @@
 
 int main()
 {
+
+
     data_t my_array[6] = {{.name = "Pokemon1", .age = 12, .strength = 9.6, .speed = 2.5, .type = FLYING},
                           {.name = "Pokemon2", .age = 15, .strength = 5.5, .speed = 8.5, .type = ELECTRIC},
                           {.name = "Pokemon3", .age = 82, .strength = 9.2, .speed = 9, .type = GRASS},
@@ -10,6 +12,9 @@ int main()
                           {.name = "Pokemon5", .age = 5, .strength = 6.7, .speed = 5.6, .type = NORMAL},
                           {.name = "Pokemon6", .age = 22, .strength = 10.0, .speed = 2.8, .type = NORMAL}
     };
+
+
+
     int length = sizeof(my_array)/ sizeof(my_array[0]);
 
     printf("Number of faster pokemons, than 6 is:  %d.\n", get_faster_pokemon(my_array, length, 6));

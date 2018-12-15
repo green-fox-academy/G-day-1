@@ -6,15 +6,17 @@ enum car_type {
     TOYOTA,
     LAND_ROVER,
     TESLA};
-
 typedef struct car {
     enum car_type type;
     double km;
     double gas;
 }car_t;
 
+
 const char* get_type_name(enum car_type car_type_type);
 void print_out_data(car_t x);
+
+
 
 int main()
 {

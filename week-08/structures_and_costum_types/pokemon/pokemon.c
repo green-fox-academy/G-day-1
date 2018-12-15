@@ -4,8 +4,6 @@ char* get_type(enum type x) {
     switch (x) {
         case NORMAL:
             return "normal";
-        case FIRE:
-            return "fire";
         case WATER:
             return "water";
         case ELECTRIC:
@@ -21,6 +19,18 @@ char* get_type(enum type x) {
         case FLYING:
             return "flying";
     }
+}
+char* get_strongest_type(data_t array[], int length, int strength)
+{
+    int max = 0;
+    int index = 0;
+
+    for (int i = 0; i < length; ++i) {
+        if(array[i].strength > max){
+            max = (int) array[i].strength;
+            index = i;
+        }}
+    return get_type(array[index].type);
 }
 
 int get_faster_pokemon(data_t array[], int length, int given_speed)
@@ -45,19 +55,7 @@ int get_type_pokemon(data_t array[], int length, type_t x)
     return counter;
 
 }
-char* get_strongest_type(data_t array[], int length, int strength)
-{
-    int max = 0;
-    int index;
 
-    for (int i = 0; i < length; ++i) {
-        if(array[i].strength > max){
-            max = array[i].strength;
-            index = i;
-        }
-    }
-    return get_type(array[index].type);
-}
 
 double get__max_stregth_of_type(data_t array[], int length, type_t x)
 {

@@ -3,7 +3,6 @@
 
 typedef enum type {
     NORMAL,
-    FIRE,
     WATER,
     ELECTRIC,
     GRASS,
