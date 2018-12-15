@@ -9,10 +9,26 @@
 // So if the word is "apple" and the number is 5, than it should write 5 lines
 // to the file and each line should be "apple"
 
-void write_multiple_lines()
+void write_multiple_lines(FILE* path, char word[256], int number);
 
 int main()
 {
+    FILE* myFile = fopen("../my-file.txt", "w");
+    char word[256];
+    int number;
+
+    printf("Give me a word and a number, please! :)\n");
+    scanf("%s\n %d", word, &number);
+
+    write_multiple_lines(myFile, word, number);
 
     return 0;
+}
+
+void write_multiple_lines(FILE* path, char word[256], int number)
+{
+    for (int i = 0; i < number; ++i) {
+        fprintf(path, "%s\n", word);
+    }
+    fclose(path);
 }
