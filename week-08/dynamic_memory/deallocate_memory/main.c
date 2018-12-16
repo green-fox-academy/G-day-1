@@ -11,7 +11,7 @@ int main()
     int* pointer = NULL;
     pointer = (int*)malloc(10 * sizeof(int));
 
-    for (int i = 0; i < 20; ++i) {
+    for (int i = 0; i < 20; ++i) {  //<-- 20-nál kisebb, baj?
         if(i % 2 == 0){
             printf("%d\n", i);
         }
