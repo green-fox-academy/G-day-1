@@ -12,10 +12,12 @@ char* repeat_string(char* x, int y);
 
 int main()
 {
-    char *string = "Baba";
+
+    char string[20];
     int number;
 
     printf("Please enter a word, and a number.\n");  // If user gives the 'word', doesnt work?! :(
+    scanf("%s", string);
     scanf("%d", &number);
 
     repeat_string(string, number);
