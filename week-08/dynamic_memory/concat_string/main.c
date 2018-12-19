@@ -19,7 +19,7 @@ int main()
 
 char* concat_strings(char* x, char* y)
 {
-    size_t size = strlen(x) + strlen(y);
+    size_t size = strlen(x) + strlen(y) +1;
     char* ptr = (char*)calloc(size, sizeof(char));   //HA MALLOCCAL CSINÁLOM, SZAR.
 
     strcat(ptr, x);
