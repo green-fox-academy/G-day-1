@@ -81,3 +81,32 @@ int get_screen_size_count(smartphone_t array[], int length, enum screen_size scr
     }
     return counter;
 }
+
+void price_calculator(smartphone_t array[], int length)
+{
+    int amort = 0;
+    int price = 0;
+    int current_year = 2019;
+    FILE* my_file = fopen("../prices.txt", "w");
+
+    if(my_file == NULL) {
+        printf("Sorry, couldnt open file. :/");
+    }
+    for (int i = 0; i < length; ++i) {
+        if(current_year - array[i].year < 5){
+            amort = (current_year - array[i].year) * 50;
+        }else if(current_year - array[i].year >= 5){
+            amort = 250;
+        }
+
+        if(array[i].type == SMALL){
+            price = 300 - amort;
+        }else if(array[i].type == MEDIUM) {
+            price = 400 - amort;
+        }else if(array[i].type == BIG){
+            price = 600 - amort;
+        }
+
+        fprintf(my_file, "%s,\t %d$\n", array[i].name, price);
+    }
+}

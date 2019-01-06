@@ -18,7 +18,7 @@ int read_from_file(char* path, smartphone_t* array);
 char* get_screen_size(smartphone_t array[], int index);
 char* get_oldest_phone(smartphone_t array[], int length);
 int get_screen_size_count(smartphone_t array[], int length, enum screen_size screensize);
-
+void price_calculator(smartphone_t array[], int length);
 
 #endif //SMARTPHONES_SMARTPHONES_H
 
