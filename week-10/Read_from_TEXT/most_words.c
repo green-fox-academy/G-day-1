@@ -24,9 +24,10 @@ int check_how_many_words(char* path) {
 
     fclose(fpointer);
     return counter;
-}
-int read_from_file(char* path) {
 
+}
+
+int read_from_file(char* path) {
 
     char **words = malloc(check_how_many_words(path) * sizeof(char *));
     FILE *fpointer = fopen(path, "r");
@@ -55,8 +56,11 @@ int read_from_file(char* path) {
     for (int j = 0; j < counter; ++j) {
         free(words[j]);
     }
+
+
     free(words);
     fclose(fpointer);
 
     return 0;
 }
+

@@ -12,7 +12,7 @@ int main()
 {
     char* path = "../my_file.txt";
 
-    //printf("%d\n", check_how_many_words(path));
+   // printf("%d\n", check_how_many_words(path));
 
     read_from_file(path);
 
