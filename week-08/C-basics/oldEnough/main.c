@@ -16,7 +16,6 @@ int main()
 
 char* isHeOlderThan18(int a)
 {
-
     if(a > 17){
         printf("You can buy alcohol.");
     }else{
