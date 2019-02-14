@@ -126,7 +126,7 @@ int selectRecords(std::string databasePath, std::string chooseRecord)
     strcpy(char_database_path, databasePath.c_str());
 
     unsigned long long int y = chooseRecord.length();
-    char char_choose_record[x + 1];
+    char char_choose_record[y + 1];
     strcpy(char_choose_record, chooseRecord.c_str());
 
     sprintf(buffer, "SELECT %s FROM Pictures;", char_choose_record);

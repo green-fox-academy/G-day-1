@@ -10,5 +10,7 @@
 
 int main() {
 
+    readDataBase("../circleDetection.db");
+
     return 0;
 }
